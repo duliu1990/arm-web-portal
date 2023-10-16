@@ -5,6 +5,7 @@ import { LoginRoutingModule } from './login-routing.module';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { FormsModule } from '@angular/forms';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     LoginRoutingModule,
     NzButtonModule,
     NzInputModule,
-    FormsModule
+    FormsModule,
+    NzIconModule
   ]
 })
 export class LoginModule { }

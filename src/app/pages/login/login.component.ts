@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,5 +10,16 @@ export class LoginComponent {
 
   userName?: string;
   password?: string;
+
+  passwordVisible = false;
+
+  constructor(private router: Router) {
+
+  }
+
+
+  login(): void {
+      this.router.navigate(['/dashboard']);
+  }
 
 }
