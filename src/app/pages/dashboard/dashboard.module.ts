@@ -6,6 +6,8 @@ import { DashboardComponent } from './dashboard.component';
 import { IconsProviderModule } from 'src/app/icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
     DashboardRoutingModule,
     IconsProviderModule,
     NzLayoutModule,
-    NzMenuModule
+    NzMenuModule,
+    NzAvatarModule,
+    NzPopoverModule
   ],
   declarations: [DashboardComponent],
   exports: [DashboardComponent]

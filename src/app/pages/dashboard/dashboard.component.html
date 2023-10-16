@@ -52,6 +52,17 @@
                  [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
               ></span>
           </span>
+          <div class="right-header">
+            <!-- <span>今天是2023年10月16号 星期一</span> -->
+            <nz-avatar nzIcon="user" style="background-color:#87d068;"></nz-avatar>
+            <nz-avatar nzIcon="logout"></nz-avatar>
+            <ng-template #contentTemplate>
+              <div>
+                <p>个人中心</p>
+              </div>
+            </ng-template>
+
+          </div>
         </div>
       </nz-header>
       <nz-content>
@@ -59,6 +70,7 @@
           <router-outlet></router-outlet>
         </div>
       </nz-content>
+      <nz-footer style="text-align: center;" class="footer">四川立档科技有限公司 &copy; 2023</nz-footer>
     </nz-layout>
   </nz-layout>
   
