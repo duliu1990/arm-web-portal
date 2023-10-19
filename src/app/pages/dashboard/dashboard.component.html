@@ -1,76 +1,76 @@
 <nz-layout class="app-layout">
-    <nz-sider class="menu-sidebar"
-              nzCollapsible
-              nzWidth="256px"
-              nzBreakpoint="md"
-              [(nzCollapsed)]="isCollapsed"
-              [nzTrigger]="null">
-      <div class="sidebar-logo">
-        <a href="#" target="_blank">
-          <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
-          <h1>立档管理系统</h1>
-        </a>
-      </div>
-      <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-        <li nz-submenu nzOpen nzTitle="主页" nzIcon="dashboard">
-          <ul>
-            <li nz-menu-item nzMatchRouter>
-              <a routerLink="/welcome">Welcome</a>
-            </li>
-            <li nz-menu-item nzMatchRouter>
-              <a>Monitor</a>
-            </li>
-            <li nz-menu-item nzMatchRouter>
-              <a>Workplace</a>
-            </li>
-          </ul>
-        </li>
-        <li nz-submenu nzOpen nzTitle="系统管理" nzIcon="setting">
-          <ul>
-            <li nz-menu-item nzMatchRouter>
-              <a>授权信息</a>
-            </li>
-            <li nz-menu-item nzMatchRouter>
-              <a>用户管理</a>
-            </li>
-            <li nz-menu-item nzMatchRouter>
-              <a>日志管理</a>
-            </li>
-            <li nz-menu-item nzMatchRouter>
-              <a>显示设置</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nz-sider>
-    <nz-layout>
-      <nz-header>
-        <div class="app-header">
-          <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-              <span class="trigger"
-                 nz-icon
-                 [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-              ></span>
-          </span>
-          <div class="right-header">
-            <!-- <span>今天是2023年10月16号 星期一</span> -->
-            <nz-avatar nzIcon="user" style="background-color:#87d068;"></nz-avatar>
-            <nz-avatar nzIcon="logout"></nz-avatar>
-            <ng-template #contentTemplate>
-              <div>
-                <p>个人中心</p>
-              </div>
-            </ng-template>
-
+  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <a href="#" target="_blank">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+        <h1>立档数字管理系统</h1>
+      </a>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzOpen nzTitle="主页" nzIcon="dashboard">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/welcome">Welcome</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a>Monitor</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a>Workplace</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzOpen nzTitle="系统管理" nzIcon="setting">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>授权信息</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/dashboard/sys-manager/user">用户管理</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a>日志管理</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a>显示设置</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+          <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
+        </span>
+        <div class="right-header">
+          <span class="company">XX档案馆数字管理</span>
+          <div class="item" (click)="personalCenter()">
+            <div class="icon">
+              <nz-avatar nzIcon="user" style="background-color:#87d068;" nzSize="small"></nz-avatar>
+            </div>
+            <div class="lab">
+              个人中心
+            </div>
+          </div>
+          <div class="item" (click)="logout()">
+            <div class="icon">
+              <nz-avatar nzIcon="logout" nzSize="small"></nz-avatar>
+            </div>
+            <div class="lab">
+              退出
+            </div>
           </div>
         </div>
-      </nz-header>
-      <nz-content>
-        <div class="inner-content">
-          <router-outlet></router-outlet>
-        </div>
-      </nz-content>
-      <nz-footer style="text-align: center;" class="footer">四川立档科技有限公司 &copy; 2023</nz-footer>
-    </nz-layout>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer style="text-align: center;" class="footer">四川立档科技有限公司 &copy; 2023</nz-footer>
   </nz-layout>
-  
+</nz-layout>
