@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build & cd /Users/darrendu/github/arm-web-portal/dist && zip -r arm-web-portal-0.0.1.zip  arm-web-portal",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
