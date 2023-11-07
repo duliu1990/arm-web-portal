@@ -1,0 +1,58 @@
+<nz-layout class="app-layout">
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <div class="left-header">
+          XX档案馆数字管理
+        </div>
+        <div class="right-header">
+          <span class="company">你好，杜柳</span>
+
+          <div class="item" *ngFor="let item of rightItems" (click)="navFun(item)">
+            <div class="icon">
+              <span nz-icon nzType="{{item.icon}}" nzTheme="outline"></span>
+            </div>
+            <div class="lab">
+              {{item.name}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <!-- <router-outlet></router-outlet> -->
+        <div>
+          <!--card start-->
+          <div nz-row [nzGutter]="8">
+            <!--one msg-->
+            <div nz-col [nzSpan]="8">
+              <nz-card nzTitle="我的消息" [nzExtra]="extraTemplate">
+
+                
+
+              </nz-card>
+              <ng-template #extraTemplate>
+                <a>更多<span nz-icon nzType="more" nzTheme="outline"></span></a>
+              </ng-template>
+            </div>
+
+            <div nz-col [nzSpan]="8">
+              <nz-card nzTitle="Card title">
+                <p>Card content</p>
+              </nz-card>
+            </div>
+            <div nz-col [nzSpan]="8">
+              <nz-card nzTitle="Card title">
+                <p>Card content</p>
+              </nz-card>
+            </div>
+          </div>
+          <!--card end-->
+        </div>
+      </div>
+    </nz-content>
+    <nz-footer style="text-align: center;" class="footer">四川立档科技有限公司 &copy; 2023</nz-footer>
+  </nz-layout>
+</nz-layout>

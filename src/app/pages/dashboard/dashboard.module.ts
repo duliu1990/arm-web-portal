@@ -8,10 +8,12 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
   imports: [
+    CommonModule,
     DashboardRoutingModule,
     IconsProviderModule,
     NzLayoutModule,

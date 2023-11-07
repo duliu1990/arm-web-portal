@@ -1,0 +1,83 @@
+:host {
+    display: flex;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.app-layout {
+    height: 100vh;
+}
+
+nz-header {
+    padding: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.app-header {
+    position: relative;
+    height: 64px;
+    padding: 0;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
+    display: flex;
+}
+
+.left-header {
+    margin-left: 24px;
+}
+
+.right-header {
+    padding: 0px 24px;
+
+    display: flex;
+    margin-left: auto;
+
+
+    .company {
+        font-size: 14px;
+        padding-right: 22px;
+    }
+
+    .item {
+        height: 100%;
+        margin: 0px 5px;
+        cursor: pointer;
+
+        .icon {
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .lab {
+            line-height: 24px;
+            font-size: 12px;
+        }
+    }
+}
+
+nz-content {
+    margin: 24px;
+}
+
+.inner-content {
+    padding: 24px;
+    background: #fff;
+    height: 100%;
+}
+
+.footer {
+    line-height: 16px;
+    padding: 10px 50px;
+}
+
+.demo-infinite-container {
+    height: 300px;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+}
+
+nz-list {
+    padding: 24px;
+}

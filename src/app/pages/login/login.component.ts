@@ -19,7 +19,7 @@ export class LoginComponent {
 
 
   login(): void {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/home']);
   }
 
 }
