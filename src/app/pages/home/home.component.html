@@ -25,27 +25,86 @@
         <!-- <router-outlet></router-outlet> -->
         <div>
           <!--card start-->
-          <div nz-row [nzGutter]="8">
+          <div nz-row [nzGutter]="{ xs: 6, sm: 12, md: 18, lg: 18 }">
             <!--one msg-->
-            <div nz-col [nzSpan]="8">
+            <div nz-col nzXs="24" nzSm="4" nzMd="6" nzLg="8" nzXl="8">
               <nz-card nzTitle="我的消息" [nzExtra]="extraTemplate">
 
-                
-
+                <cdk-virtual-scroll-viewport itemSize="73" class="demo-infinite-container">
+                  <nz-list>
+                    <nz-list-item *cdkVirtualFor="let item of ds">
+                      <nz-skeleton *ngIf="!item" [nzAvatar]="true" [nzParagraph]="{ rows: 1 }"></nz-skeleton>
+                      <nz-list-item-meta>
+                        <nz-list-item-meta-title>
+                          <a href="https://ng.ant.design">{{ item.name.last }}</a>
+                        </nz-list-item-meta-title>
+                      </nz-list-item-meta>
+                    </nz-list-item>
+                  </nz-list>
+                </cdk-virtual-scroll-viewport>
               </nz-card>
               <ng-template #extraTemplate>
                 <a>更多<span nz-icon nzType="more" nzTheme="outline"></span></a>
               </ng-template>
             </div>
 
-            <div nz-col [nzSpan]="8">
-              <nz-card nzTitle="Card title">
-                <p>Card content</p>
+            <div nz-col nzXs="24" nzSm="4" nzMd="6" nzLg="8" nzXl="8">
+              <nz-card nzTitle="公告" [nzExtra]="extraTemplate">
+
+                <cdk-virtual-scroll-viewport itemSize="73" class="demo-infinite-container">
+                  <nz-list>
+                    <nz-list-item *cdkVirtualFor="let item of ds">
+                      <nz-skeleton *ngIf="!item" [nzAvatar]="true" [nzParagraph]="{ rows: 1 }"></nz-skeleton>
+                      <nz-list-item-meta>
+                        <nz-list-item-meta-title>
+                          <a href="https://ng.ant.design">{{ item.name.last }}</a>
+                        </nz-list-item-meta-title>
+                      </nz-list-item-meta>
+                    </nz-list-item>
+                  </nz-list>
+                </cdk-virtual-scroll-viewport>
               </nz-card>
             </div>
-            <div nz-col [nzSpan]="8">
-              <nz-card nzTitle="Card title">
-                <p>Card content</p>
+            <div nz-col nzXs="24" nzSm="4" nzMd="6" nzLg="8" nzXl="8">
+              <nz-card nzTitle="档案检索">
+
+                <div class="demo-infinite-container">
+                  <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+                    <input type="text" nz-input placeholder="" />
+                  </nz-input-group>
+                  <ng-template #suffixButton>
+                    <button nz-button nzType="primary" nzSize="large" nzSearch>检索</button>
+                  </ng-template>
+                </div>
+              </nz-card>
+            </div>
+          </div>
+          <!--2 line-->
+          <div nz-row [nzGutter]="{ xs: 6, sm: 12, md: 18, lg: 18 }" class="second-line">
+            <div nz-col nzXs="24" nzSm="4" nzMd="6" nzLg="8" nzXl="8">
+              <nz-card nzTitle="档案统计">
+
+                <div class="demo-infinite-container">
+                  <pie-chart></pie-chart>
+                </div>
+              </nz-card>
+            </div>
+
+            <div nz-col nzXs="24" nzSm="4" nzMd="6" nzLg="8" nzXl="8">
+              <nz-card nzTitle="数字化统计">
+
+                <div class="demo-infinite-container">
+                  <pie-chart></pie-chart>
+                </div>
+              </nz-card>
+            </div>
+
+            <div nz-col nzXs="24" nzSm="4" nzMd="6" nzLg="8" nzXl="8">
+              <nz-card nzTitle="利用统计">
+
+                <div class="demo-infinite-container">
+                  
+                </div>
               </nz-card>
             </div>
           </div>

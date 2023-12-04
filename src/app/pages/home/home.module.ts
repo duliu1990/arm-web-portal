@@ -14,6 +14,11 @@ import { ArmSearchComponent } from './arm-search/arm-search.component';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { EchartsModule } from 'src/app/echarts/echarts.module';
 
 
 @NgModule({
@@ -34,7 +39,12 @@ import { NzTableModule } from 'ng-zorro-antd/table';
     NzCardModule,
     NzGridModule,
     NzListModule,
-    NzTableModule
+    NzTableModule,
+    NzSkeletonModule,
+    ScrollingModule,
+    NzInputModule,
+    NzButtonModule,
+    EchartsModule
   ]
 })
 export class HomeModule { }

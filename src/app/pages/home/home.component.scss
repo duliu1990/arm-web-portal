@@ -6,7 +6,7 @@
 }
 
 .app-layout {
-    height: 100vh;
+    // height: 100vh;
 }
 
 nz-header {
@@ -59,6 +59,7 @@ nz-header {
 
 nz-content {
     margin: 24px;
+    min-height: unset;
 }
 
 .inner-content {
@@ -73,11 +74,17 @@ nz-content {
 }
 
 .demo-infinite-container {
-    height: 300px;
-    border: 1px solid #e8e8e8;
+    height: 270px;
+    // border: 1px solid #e8e8e8;
     border-radius: 4px;
 }
 
-nz-list {
-    padding: 24px;
+nz-card {
+    .ant-card-body {
+        padding: 5px;
+    }
+}
+
+.second-line{
+    margin-top: 12px;
 }
