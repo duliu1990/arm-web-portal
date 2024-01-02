@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit, OnDestroy{
     { "name": "首页", "icon": "home", "routerUrl": "/home" },
     { "name": "个人中心", "icon": "user", "routerUrl": "/dashboard/personal-center" },
     { "name": "档案", "icon": "file-protect", "routerUrl": "/dashboard" },
-    { "name": "系统管理", "icon": "setting", "routerUrl": "/dashboard" },
+    { "name": "系统管理", "icon": "setting", "routerUrl": "/dashboard/sys-manager" },
     { "name": "退出", "icon": "logout", "routerUrl": "/login" },
   ];
 
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit, OnDestroy{
   constructor(private router: Router, private http: HttpClient, private nzMessage: NzMessageService) {}
 
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     this.ds
       .completed()
       .pipe(takeUntil(this.destroy$))

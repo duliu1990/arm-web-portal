@@ -9,6 +9,8 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { CommonModule } from '@angular/common';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { CommonModule } from '@angular/common';
     NzLayoutModule,
     NzMenuModule,
     NzAvatarModule,
-    NzPopoverModule
+    NzPopoverModule,
+    NzToolTipModule
   ],
   declarations: [DashboardComponent],
   exports: [DashboardComponent]

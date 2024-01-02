@@ -8,35 +8,21 @@
       </a>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="主页" nzIcon="dashboard">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">Welcome</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Monitor</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Workplace</a>
-          </li>
-        </ul>
-      </li>
-      <li nz-submenu nzOpen nzTitle="系统管理" nzIcon="setting">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a>授权信息</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/dashboard/sys-manager/user">用户管理</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>日志管理</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>显示设置</a>
-          </li>
-        </ul>
-      </li>
+      <ng-container *ngFor="let item of user_menuItems">
+        <li nz-menu-item nz-tooltip nzTooltipPlacement="right" *ngIf="!item.sub_menus">
+          <span nz-icon nzType="{{item.icon}}"></span>
+          <span>{{item.name}}</span>
+        </li>
+
+        <li nz-submenu nzTitle="{{item.name}}" nzIcon="{{item.icon}}" *ngIf="item.sub_menus">
+          <ul>
+            <li nz-menu-item nzMatchRouter *ngFor="let item2 of item.sub_menus">
+              <a routerLink="{{item2.routerUrl}}">{{item2.name}}</a>
+            </li>
+          </ul>
+        </li>
+      </ng-container>
+
     </ul>
   </nz-sider>
   <nz-layout>

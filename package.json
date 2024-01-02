@@ -1,6 +1,6 @@
 {
   "name": "arm-web-portal",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -19,6 +19,8 @@
     "@angular/platform-browser": "^16.1.0",
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
     "echarts": "^5.4.3",
     "ng-zorro-antd": "^16.2.0",
     "ngx-echarts": "^17.1.0",
