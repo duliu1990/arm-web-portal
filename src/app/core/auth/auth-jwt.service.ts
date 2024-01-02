@@ -24,6 +24,7 @@ export class AuthServerProvider {
   }
 
   login(credentials: Login): Observable<void> {
+    console.log("--->" + this.applicationConfigService.getEndpointFor('api/authenticate'))
     return this.http
       .post<JwtToken>(this.applicationConfigService.getEndpointFor('api/authenticate'), credentials)
       .pipe(map(response => this.authenticateSuccess(response, credentials.rememberMe)));

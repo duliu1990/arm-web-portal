@@ -25,14 +25,14 @@ interface Name {
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit, OnDestroy{
+export class HomeComponent implements OnInit, OnDestroy {
 
   rightItems = [
     { "name": "首页", "icon": "home", "routerUrl": "/home" },
     { "name": "个人中心", "icon": "user", "routerUrl": "/dashboard/personal-center" },
     { "name": "档案", "icon": "file-protect", "routerUrl": "/dashboard" },
     { "name": "系统管理", "icon": "setting", "routerUrl": "/dashboard/sys-manager" },
-    { "name": "退出", "icon": "logout", "routerUrl": "/login" },
+    { "name": "退出", "icon": "logout", "routerUrl": "/login", "params": { "type": "logout" } },
   ];
 
   data = [
@@ -47,10 +47,10 @@ export class HomeComponent implements OnInit, OnDestroy{
 
   private destroy$ = new Subject<boolean>();
 
-  constructor(private router: Router, private http: HttpClient, private nzMessage: NzMessageService) {}
+  constructor(private router: Router, private http: HttpClient, private nzMessage: NzMessageService) { }
 
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
     this.ds
       .completed()
       .pipe(takeUntil(this.destroy$))
@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit, OnDestroy{
    * @param item 
    */
   navFun(item: any): void {
-    this.router.navigate([item.routerUrl]);
+    this.router.navigate([item.routerUrl], { queryParams: item.params});
   }
 
   ngOnDestroy(): void {

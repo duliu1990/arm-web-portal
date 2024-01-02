@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { TranslateModule } from '@ngx-translate/core';
+import { httpInterceptorProviders } from './core/interceptor';
 
 registerLocaleData(zh);
 
@@ -26,10 +28,12 @@ registerLocaleData(zh);
     BrowserAnimationsModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
-    })
+    }),
+    TranslateModule.forRoot()
   ],
   providers: [
-    { provide: NZ_I18N, useValue: zh_CN }
+    { provide: NZ_I18N, useValue: zh_CN },
+    httpInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })

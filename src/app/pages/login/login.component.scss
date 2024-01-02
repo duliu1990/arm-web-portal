@@ -1,6 +1,7 @@
 .limiter {
     width: 100%;
     margin: 0 auto;
+    background-image: url("/assets/images/login/login-background.jpg");
 }
 
 .container-login100 {
@@ -15,11 +16,11 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
-    background: #f2f2f2;
+    // background: #f2f2f2;
 }
 
 .wrap-login100 {
-    width: 390px;
+    // width: 390px;
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
@@ -52,6 +53,10 @@
 .wrap-input100 {
     width: 100%;
     position: relative;
-    margin-bottom: 37px;
+    margin-bottom: 8px;
 }
 
+.login-danger{
+    padding: 10px 0px;
+    color: red;
+}

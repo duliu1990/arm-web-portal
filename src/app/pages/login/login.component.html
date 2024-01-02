@@ -4,30 +4,46 @@
             <span class="login100-form-title p-b-26">
                 立档科技管理系统
             </span>
-
-            <div class="wrap-input100 validate-input">
-                <nz-input-group [nzPrefix]="prefixTemplateUser">
-                    <input type="text" nz-input placeholder="用户名" [(ngModel)]="userName"/>
-                </nz-input-group>
-                <ng-template #prefixTemplateUser><span nz-icon nzType="user"></span></ng-template>
-            </div>
-
-            <div class="wrap-input100 validate-input">
-                <nz-input-group [nzSuffix]="suffixTemplate">
-                    <input [type]="passwordVisible ? 'text' : 'password'" nz-input placeholder="密码"
-                        [(ngModel)]="password" />
-                </nz-input-group>
-                <ng-template #suffixTemplate>
-                    <span nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
-                        (click)="passwordVisible = !passwordVisible"></span>
-                </ng-template>
-            </div>
-
-            <div class="container-login100-form-btn">
-                <div class="wrap-login100-form-btn">
-                    <button nz-button nzBlock nzType="primary" (click)="login()">登陆</button>
+            <form nz-form (ngSubmit)="login()" [formGroup]="loginForm">
+                <div class="wrap-input100 validate-input">
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="请输入登录用户名！">
+                            <nz-input-group nzPrefixIcon="user">
+                                <input type="text" nz-input placeholder="用户名" name="username" id="username" #username
+                                    formControlName="username" />
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
                 </div>
-            </div>
+
+                <div class="wrap-input100 validate-input">
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="请输入账号密码！">
+                            <nz-input-group nzPrefixIcon="lock">
+                                <input type="password" nz-input formControlName="password" placeholder="密码" />
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div class="wrap-input100 validate-input">
+                    <label nz-checkbox formControlName="rememberMe">
+                        <span>记住账号</span>
+                    </label>
+                </div>
+
+                <div *ngIf="authenticationError">
+                    <div class="login-danger">
+                        <span nz-icon nzType="warning" nzTheme="outline"></span> 登录失败，请检查您的用户名或密码。
+                    </div>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <button nz-button nzBlock nzType="primary" type="submit">登陆</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

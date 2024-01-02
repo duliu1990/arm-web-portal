@@ -4,8 +4,11 @@ import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+
 
 
 @NgModule({
@@ -17,7 +20,10 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     LoginRoutingModule,
     NzButtonModule,
     NzInputModule,
+    NzFormModule,
     FormsModule,
+    NzCheckboxModule,
+    ReactiveFormsModule,
     NzIconModule
   ]
 })

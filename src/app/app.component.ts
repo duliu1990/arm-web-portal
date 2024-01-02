@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApplicationConfigService } from './core/config/application-config.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
+  constructor(applicationConfigService: ApplicationConfigService){
+    // applicationConfigService.setEndpointPrefix("http://localhost:8080/");
+  }
 }
