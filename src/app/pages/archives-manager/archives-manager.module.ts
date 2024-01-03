@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArchivesManagerComponent } from './archives-manager.component';
+import { ArchivesManagerRoutingModule } from './archives-manager-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { ArchivesManagerComponent } from './archives-manager.component';
     ArchivesManagerComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ArchivesManagerRoutingModule
   ]
 })
 export class ArchivesManagerModule { }

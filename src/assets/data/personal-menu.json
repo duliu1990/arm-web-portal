@@ -1,0 +1,54 @@
+[
+    {
+        "name": "我的消息",
+        "icon": "mail",
+        "routerUrl": "/dashboard/personal-center/msg"
+    },
+    {
+        "name": "系统公告",
+        "icon": "message",
+        "routerUrl": "/dashboard/personal-center/sys-msg"
+    },
+    {
+        "name": "我的借阅",
+        "icon": "database",
+        "sub_menus": [
+            {
+                "name": "实物借阅",
+                "routerUrl": "/x"
+            },
+            {
+                "name": "电子借阅",
+                "routerUrl": "/dashboard/sys-manager"
+            },
+            {
+                "name": "借阅登记",
+                "routerUrl": "/dashboard/sys-manager"
+            }
+        ]
+    },
+    {
+        "name": "我的审批",
+        "icon": "file-text",
+        "routerUrl": "/dashboard/personal-center/xxx"
+    },
+    {
+        "name": "我的编研",
+        "icon": "inbox",
+        "routerUrl": "/dashboard/personal-center/xx"
+    },
+    {
+        "name": "我的资料",
+        "icon": "user",
+        "sub_menus": [
+            {
+                "name": "个人信息",
+                "routerUrl": "/dashboard/personal-center/info"
+            },
+            {
+                "name": "修改密码",
+                "routerUrl": "/dashboard/personal-center/password"
+            }
+        ]
+    }
+]

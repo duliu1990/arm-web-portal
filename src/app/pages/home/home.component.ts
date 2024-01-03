@@ -5,6 +5,7 @@ import { catchError, takeUntil } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { CollectionViewer, DataSource } from '@angular/cdk/collections';
+import { HeaderMenu } from 'src/app/core/request/menu.model';
 
 
 interface ItemData {
@@ -27,13 +28,7 @@ interface Name {
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  rightItems = [
-    { "name": "首页", "icon": "home", "routerUrl": "/home" },
-    { "name": "个人中心", "icon": "user", "routerUrl": "/dashboard/personal-center" },
-    { "name": "档案", "icon": "file-protect", "routerUrl": "/dashboard" },
-    { "name": "系统管理", "icon": "setting", "routerUrl": "/dashboard/sys-manager" },
-    { "name": "退出", "icon": "logout", "routerUrl": "/login", "params": { "type": "logout" } },
-  ];
+  header_menu: HeaderMenu[] = []
 
   data = [
     'Racing car sprays burning fuel into crowd.',
@@ -57,6 +52,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       .subscribe(() => {
         this.nzMessage.warning('Infinite List loaded all');
       });
+
+      this.http.get<any>('/assets/data/head-menu.json').subscribe(el => {
+        this.header_menu = el;
+      })
   }
 
   /**

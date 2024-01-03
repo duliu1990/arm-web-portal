@@ -61,7 +61,6 @@ export class LoginComponent implements OnInit, AfterViewInit {
    */
   login(): void {
     if (this.loginForm.valid) {
-      console.log('submit', this.loginForm.value);
       this.loginService.login(this.loginForm.getRawValue()).subscribe({
         next: () => {
           this.authenticationError = false;

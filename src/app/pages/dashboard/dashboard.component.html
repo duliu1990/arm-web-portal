@@ -8,10 +8,12 @@
       </a>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <ng-container *ngFor="let item of user_menuItems">
-        <li nz-menu-item nz-tooltip nzTooltipPlacement="right" *ngIf="!item.sub_menus">
+      <ng-container *ngFor="let item of left_menu">
+        <li nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" *ngIf="!item.sub_menus">
           <span nz-icon nzType="{{item.icon}}"></span>
-          <span>{{item.name}}</span>
+          <span>
+            <a routerLink="{{item.routerUrl}}">{{item.name}}</a>
+          </span>
         </li>
 
         <li nz-submenu nzTitle="{{item.name}}" nzIcon="{{item.icon}}" *ngIf="item.sub_menus">
@@ -34,7 +36,7 @@
         <div class="right-header">
           <span class="company">你好，杜柳</span>
 
-          <div class="item" *ngFor="let item of rightItems" (click)="navFun(item)">
+          <div class="item" *ngFor="let item of header_menu" (click)="navFun(item)">
             <div class="icon">
               <span nz-icon nzType="{{item.icon}}" nzTheme="outline"></span>
             </div>

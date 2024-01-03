@@ -1,0 +1,71 @@
+<div nz-row class="top-menu">
+  <div nz-col nzSpan="24">
+    <ul nz-menu nzMode="horizontal">
+      <li nz-menu-item (click)="showModal()">
+        <span nz-icon nzType="file-add"></span>
+        添加
+      </li>
+    </ul>
+  </div>
+</div>
+
+<nz-table #rowSelectionTable nzShowPagination nzShowSizeChanger [nzData]="listOfData"
+  (nzCurrentPageDataChange)="onCurrentPageDataChange($event)">
+  <thead>
+    <tr>
+      <th [nzChecked]="checked" [nzIndeterminate]="indeterminate" nzLabel="Select all"
+        (nzCheckedChange)="onAllChecked($event)"></th>
+      <th>全宗号</th>
+      <th>全宗名称</th>
+      <th>描述</th>
+      <th>动作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of rowSelectionTable.data">
+      <td [nzChecked]="setOfCheckedId.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"></td>
+      <td>{{ data.name }}</td>
+      <td>{{ data.age }}</td>
+      <td>{{ data.address }}</td>
+      <td>
+        <a>修改</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a>删除</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+
+
+<nz-modal [(nzVisible)]="isVisible" nzTitle="添加全宗" (nzOnCancel)="handleCancel()" [nzFooter]="null"
+  [nzOkLoading]="isOkLoading">
+  <div *nzModalContent nz-row>
+    <div nz-col nzSpan="24">
+        <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="orgName">全宗号</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="请输入单位名称！">
+                    <input nz-input formControlName="orgName" id="orgName" />
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="orgCode" nzRequired>全宗名称</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="请输入单位代码！">
+                    <input nz-input type="string" id="orgCode" formControlName="orgCode"/>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="orgAddress" nzRequired>描述</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="请输入单位地址！">
+                    <textarea rows="4" nz-input id="orgAddress" formControlName="orgAddress"></textarea>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item nz-row class="register-area">
+                <nz-form-control [nzSpan]="14" [nzOffset]="6">
+                    <button nz-button nzType="primary">保存</button>
+                </nz-form-control>
+            </nz-form-item>
+        </form>
+    </div>
+</div>
+</nz-modal>

@@ -1,0 +1,27 @@
+[
+    {
+        "name": "首页",
+        "icon": "home",
+        "routerUrl": "/home"
+    },
+    {
+        "name": "个人中心",
+        "icon": "user",
+        "routerUrl": "/dashboard/personal-center/msg"
+    },
+    {
+        "name": "档案",
+        "icon": "file-protect",
+        "routerUrl": "/dashboard"
+    },
+    {
+        "name": "系统管理",
+        "icon": "setting",
+        "routerUrl": "/dashboard/sys-manager"
+    },
+    {
+        "name": "退出",
+        "icon": "logout",
+        "routerUrl": "/login"
+    }
+]
