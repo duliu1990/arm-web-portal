@@ -10,19 +10,9 @@
         "routerUrl": "/dashboard/sys-manager/qz-manager"
     },
     {
-        "name": "文件类型",
-        "icon": "user",
-        "routerUrl": "/dashboard/personal-center"
-    },
-    {
         "name": "档案门类",
         "icon": "file-protect",
-        "routerUrl": "/dashboard"
-    },
-    {
-        "name": "数据字典",
-        "icon": "setting",
-        "routerUrl": "/dashboard"
+        "routerUrl": "/dashboard/sys-manager/archive-category"
     },
     {
         "name": "数据项",

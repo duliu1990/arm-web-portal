@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserManagerComponent } from './user-manager/user-manager.component';
 import { OrgInfoComponent } from './org-info/org-info.component';
 import { QuanzongManagerComponent } from './quanzong-manager/quanzong-manager.component';
+import { ArchiveCategoryComponent } from './archive-category/archive-category.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'qz-manager',
     component: QuanzongManagerComponent,
+  },
+  {
+    path: 'archive-category',
+    component: ArchiveCategoryComponent,
   },
 ];
 

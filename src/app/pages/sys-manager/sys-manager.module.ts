@@ -16,12 +16,17 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { IconsProviderModule } from 'src/app/icons-provider.module';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { ArchiveCategoryComponent } from './archive-category/archive-category.component';
+import { NzTreeModule } from 'ng-zorro-antd/tree';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
 
 @NgModule({
   declarations: [
     UserManagerComponent,
     OrgInfoComponent,
-    QuanzongManagerComponent
+    QuanzongManagerComponent,
+    ArchiveCategoryComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +43,10 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
     NzMenuModule,
     IconsProviderModule,
     NzDividerModule,
-    NzModalModule
+    NzModalModule,
+    NzTreeModule,
+    NzSpaceModule,
+    NzUploadModule
   ]
 })
 export class SysManagerModule { }
