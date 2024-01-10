@@ -9,7 +9,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { QuanzongManagerComponent } from './quanzong-manager/quanzong-manager.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -20,13 +19,16 @@ import { ArchiveCategoryComponent } from './archive-category/archive-category.co
 import { NzTreeModule } from 'ng-zorro-antd/tree';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { ArchiveDataComponent } from './archive-data/archive-data.component';
+import { SysInfoComponent } from './sys-info/sys-info.component';
 
 @NgModule({
   declarations: [
     UserManagerComponent,
     OrgInfoComponent,
-    QuanzongManagerComponent,
-    ArchiveCategoryComponent
+    ArchiveCategoryComponent,
+    ArchiveDataComponent,
+    SysInfoComponent
   ],
   imports: [
     CommonModule,

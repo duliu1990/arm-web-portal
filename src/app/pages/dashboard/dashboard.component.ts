@@ -57,7 +57,12 @@ export class DashboardComponent implements OnInit {
       this.http.get<any>('/assets/data/personal-menu.json').subscribe(el => {
         this.left_menu = el;
       });
+    } else if (reqPath.startsWith('/dashboard/archive')) {
+      this.http.get<any>('/assets/data/archive-menu.json').subscribe(el => {
+        this.left_menu = el;
+      });
     }
+
   }
 
 }

@@ -7,6 +7,7 @@ import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { PersonalMsgComponent } from './personal-msg/personal-msg.component';
 import { PersonalPasswordComponent } from './personal-password/personal-password.component';
 import { PersonalSysMsgComponent } from './personal-sys-msg/personal-sys-msg.component';
+import { PersonalLogComponent } from './personal-log/personal-log.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PersonalSysMsgComponent } from './personal-sys-msg/personal-sys-msg.com
     PersonalInfoComponent,
     PersonalMsgComponent,
     PersonalPasswordComponent,
-    PersonalSysMsgComponent
+    PersonalSysMsgComponent,
+    PersonalLogComponent
   ],
   imports: [
     CommonModule,

@@ -5,11 +5,6 @@
         "routerUrl": "/dashboard/sys-manager/org-info"
     },
     {
-        "name": "全宗管理",
-        "icon": "bank",
-        "routerUrl": "/dashboard/sys-manager/qz-manager"
-    },
-    {
         "name": "档案门类",
         "icon": "file-protect",
         "routerUrl": "/dashboard/sys-manager/archive-category"
@@ -17,62 +12,12 @@
     {
         "name": "数据项",
         "icon": "logout",
-        "routerUrl": "/login"
-    },
-    {
-        "name": "档案格式",
-        "icon": "logout",
-        "routerUrl": "/login"
-    },
-    {
-        "name": "实体分类",
-        "icon": "logout",
-        "routerUrl": "/login"
-    },
-    {
-        "name": "归档设置",
-        "icon": "logout",
-        "routerUrl": "/login"
-    },
-    {
-        "name": "原文存储",
-        "icon": "logout",
-        "routerUrl": "/login"
-    },
-    {
-        "name": "图像水印",
-        "icon": "logout",
-        "routerUrl": "/login",
-        "sub_menus": [
-            {
-                "name": "水印方案",
-                "routerUrl": "/x"
-            },
-            {
-                "name": "水印设置",
-                "routerUrl": "/dashboard/sys-manager"
-            }
-        ]
-    },
-    {
-        "name": "档号章设置",
-        "icon": "logout",
-        "routerUrl": "/login"
-    },
-    {
-        "name": "OCR管理",
-        "icon": "logout",
-        "routerUrl": "/login"
-    },
-    {
-        "name": "审批流程",
-        "icon": "logout",
-        "routerUrl": "/login"
+        "routerUrl": "/dashboard/sys-manager/archive-data"
     },
     {
         "name": "系统公告",
         "icon": "logout",
-        "routerUrl": "/login"
+        "routerUrl": "/dashboard/sys-manager/sys-info"
     },
     {
         "name": "用户管理",

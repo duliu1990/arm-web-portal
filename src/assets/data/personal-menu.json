@@ -10,32 +10,9 @@
         "routerUrl": "/dashboard/personal-center/sys-msg"
     },
     {
-        "name": "我的借阅",
-        "icon": "database",
-        "sub_menus": [
-            {
-                "name": "实物借阅",
-                "routerUrl": "/x"
-            },
-            {
-                "name": "电子借阅",
-                "routerUrl": "/dashboard/sys-manager"
-            },
-            {
-                "name": "借阅登记",
-                "routerUrl": "/dashboard/sys-manager"
-            }
-        ]
-    },
-    {
-        "name": "我的审批",
-        "icon": "file-text",
-        "routerUrl": "/dashboard/personal-center/xxx"
-    },
-    {
-        "name": "我的编研",
+        "name": "登录日志",
         "icon": "inbox",
-        "routerUrl": "/dashboard/personal-center/xx"
+        "routerUrl": "/dashboard/personal-center/log"
     },
     {
         "name": "我的资料",

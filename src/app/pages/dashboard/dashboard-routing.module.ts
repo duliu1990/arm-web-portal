@@ -15,6 +15,10 @@ const routes: Routes = [
         path: 'sys-manager',
         loadChildren: () => import('src/app/pages/sys-manager/sys-manager.module').then(m => m.SysManagerModule)
       },
+      {
+        path: 'archive',
+        loadChildren: () => import('src/app/pages/archives-manager/archives-manager.module').then(m => m.ArchivesManagerModule)
+      },
     ]
   },
 

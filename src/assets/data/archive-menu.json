@@ -1,0 +1,21 @@
+[
+    {
+        "name": "文书档案",
+        "icon": "user",
+        "sub_menus": [
+            {
+                "name": "个人信息",
+                "routerUrl": "/dashboard/personal-center/info"
+            },
+            {
+                "name": "修改密码",
+                "routerUrl": "/dashboard/personal-center/password"
+            }
+        ]
+    },
+    {
+        "name": "设备档案",
+        "icon": "mail",
+        "routerUrl": "/dashboard/personal-center/msg"
+    }
+]

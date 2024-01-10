@@ -5,6 +5,7 @@ import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { PersonalMsgComponent } from './personal-msg/personal-msg.component';
 import { PersonalSysMsgComponent } from './personal-sys-msg/personal-sys-msg.component';
 import { PersonalPasswordComponent } from './personal-password/personal-password.component';
+import { PersonalLogComponent } from './personal-log/personal-log.component';
 
 const routes: Routes = [
   { path: '', component: PersonalCenterComponent },
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'password',
     component: PersonalPasswordComponent
+  },
+  {
+    path: 'log',
+    component: PersonalLogComponent
   }
 ];
 
