@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
-interface ItemData {
-  href: string;
-  title: string;
-  avatar: string;
-  description: string;
-  content: string;
-}
+import { PersonalMsg } from './personal-msg.model';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzCustomColumn } from 'ng-zorro-antd/table';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-personal-msg',
@@ -15,22 +11,65 @@ interface ItemData {
 })
 export class PersonalMsgComponent implements OnInit {
 
-  data: ItemData[] = [];
+  msgData: PersonalMsg[] = []
 
-  ngOnInit(): void {
-    this.loadData(1);
+  tbWd: string[] = ["5%", "15%", "65%", "15%"];
+
+  checked = false;
+  indeterminate = false;
+  listOfCurrentPageData: readonly PersonalMsg[] = [];
+
+  setOfCheckedId = new Set<number>();
+
+  constructor(private message: NzMessageService, private http: HttpClient,) {
+
   }
 
-  loadData(pi: number): void {
-    this.data = new Array(10).fill({}).map((_, index) => ({
-      href: 'http://ant.design',
-      title: `ant design part ${index} (page: ${pi})`,
-      avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-      description: 'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-      content:
-        'We supply a series of design principles, practical patterns and high quality design resources ' +
-        '(Sketch and Axure), to help people create their product prototypes beautifully and efficiently.'
-    }));
+  ngOnInit(): void {
+    this.http.get<any>('/assets/data/personal-msg.json').subscribe(el => {
+      this.msgData = el;
+    });
+  }
+
+  updateCheckedSet(id: number, checked: boolean): void {
+    if (checked) {
+      this.setOfCheckedId.add(id);
+    } else {
+      this.setOfCheckedId.delete(id);
+    }
+  }
+
+  onCurrentPageDataChange(listOfCurrentPageData: readonly PersonalMsg[]): void {
+    this.listOfCurrentPageData = listOfCurrentPageData;
+    this.refreshCheckedStatus();
+  }
+
+  refreshCheckedStatus(): void {
+    this.checked = this.listOfCurrentPageData.every(({ id }) => this.setOfCheckedId.has(id));
+    this.indeterminate = this.listOfCurrentPageData.some(({ id }) => this.setOfCheckedId.has(id)) && !this.checked;
+  }
+
+  onItemChecked(id: number, checked: boolean): void {
+    this.updateCheckedSet(id, checked);
+    this.refreshCheckedStatus();
+  }
+
+  onAllChecked(checked: boolean): void {
+    this.listOfCurrentPageData
+      .forEach(({ id }) => this.updateCheckedSet(id, checked));
+    this.refreshCheckedStatus();
+  }
+
+  /**
+   * Delete the selected msg
+   */
+  deleteMsg(item?: PersonalMsg): void {
+    if (item) {
+      this.message.create('success', `Item ${item.id} delete success.`);
+    } else {
+      this.message.create('success', `Item ${this.setOfCheckedId.size} delete success.`);
+    }
+
   }
 
 }

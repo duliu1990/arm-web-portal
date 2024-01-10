@@ -1,1 +1,32 @@
-<p>personal-log works!</p>
+<div nz-row class="top-menu">
+    <div nz-col nzSpan="24">
+        <nz-breadcrumb>
+            <nz-breadcrumb-item>首页</nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+                <a>个人中心</a>
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>登录日志</nz-breadcrumb-item>
+        </nz-breadcrumb>
+    </div>
+</div>
+
+<div nz-row class="log-data">
+    <div nz-col nzSpan="24">
+        <nz-table #smallTable nzSize="small" [nzData]="data">
+            <thead>
+                <tr>
+                    <th>登录名</th>
+                    <th>登录时间</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of smallTable.data">
+                    <td>{{ data.name }}</td>
+                    <td>{{ data.age }}</td>
+                    <td>{{ data.address }}</td>
+                </tr>
+            </tbody>
+        </nz-table>
+    </div>
+</div>

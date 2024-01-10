@@ -1,1 +1,46 @@
-<p>personal-sys-msg works!</p>
+<div nz-row class="top-menu">
+    <div nz-col nzSpan="24">
+        <nz-breadcrumb>
+            <nz-breadcrumb-item>首页</nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+                <a>个人中心</a>
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>系统公告</nz-breadcrumb-item>
+        </nz-breadcrumb>
+    </div>
+</div>
+
+<div nz-row class="top-menu">
+    <div nz-col nzSpan="24">
+        <ul nz-menu nzMode="horizontal">
+            <li nz-menu-item (click)="deleteMsg()">
+                <span nz-icon nzType="delete"></span>
+                删除
+            </li>
+        </ul>
+    </div>
+</div>
+
+<nz-table #rowSelectionTable nzSize="small" nzShowPagination nzShowSizeChanger [nzData]="msgData" [nzWidthConfig]="tbWd"
+    (nzCurrentPageDataChange)="onCurrentPageDataChange($event)">
+    <thead>
+        <tr>
+            <th [nzChecked]="checked" [nzIndeterminate]="indeterminate" nzLabel="全选"
+                (nzCheckedChange)="onAllChecked($event)">
+            </th>
+            <th>消息时间</th>
+            <th>消息内容</th>
+            <th>动作</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of rowSelectionTable.data">
+            <td [nzChecked]="setOfCheckedId.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"></td>
+            <td>{{ data.createDate }}</td>
+            <td>{{ data.message }}</td>
+            <td>
+                <a (click)="deleteMsg(data)">删除</a>
+            </td>
+        </tr>
+    </tbody>
+</nz-table>
