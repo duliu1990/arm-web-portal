@@ -21,6 +21,9 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { ArchiveDataComponent } from './archive-data/archive-data.component';
 import { SysInfoComponent } from './sys-info/sys-info.component';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzTreeSelectModule } from 'ng-zorro-antd/tree-select';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +51,9 @@ import { SysInfoComponent } from './sys-info/sys-info.component';
     NzModalModule,
     NzTreeModule,
     NzSpaceModule,
-    NzUploadModule
+    NzUploadModule,
+    NzBreadCrumbModule,
+    NzTreeSelectModule
   ]
 })
 export class SysManagerModule { }

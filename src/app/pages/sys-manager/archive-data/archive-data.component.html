@@ -1,1 +1,27 @@
-<p>archive-data works!</p>
+<div nz-row class="top-menu">
+    <div nz-col nzSpan="24">
+        <nz-breadcrumb>
+            <nz-breadcrumb-item>首页</nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+                <a>系统管理</a>
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>数据项</nz-breadcrumb-item>
+        </nz-breadcrumb>
+    </div>
+</div>
+
+<div nz-row class="row">
+    <div nz-col nzSpan="24">
+        <nz-space style="width:100%;" [nzSize]="10">
+            <div>档案门类：</div>
+            <nz-tree-select [nzExpandedKeys]="expandKeys" [nzNodes]="nodes" nzShowSearch 
+                nzPlaceHolder="请选择档案门类" [(ngModel)]="value" (ngModelChange)="onChange($event)" style="width: 90%;" ></nz-tree-select>
+        </nz-space>
+    </div>
+</div>
+
+<div nz-row class="row">
+    <div nz-col nzSpan="24">
+       
+    </div>
+</div>
